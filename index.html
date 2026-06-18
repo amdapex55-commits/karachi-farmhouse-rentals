@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Karachi Farmhouse Rentals | Private Pool Farmhouses</title>
+
+  <meta
+    name="description"
+    content="Book private farmhouses in Karachi for family picnics, birthdays, pool parties, BBQ nights, and events. Check availability on WhatsApp."
+  />
+
+  <style>
+    :root {
+      --green: #0f6b4f;
+      --dark-green: #084b39;
+      --gold: #d89b42;
+      --cream: #fff9ed;
+      --white: #ffffff;
+      --text: #171717;
+      --muted: #666666;
+      --line: rgba(0, 0, 0, 0.1);
+      --shadow: 0 18px 60px rgba(8, 75, 57, 0.16);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(15, 107, 79, 0.13), transparent 35rem),
+        linear-gradient(180deg, #fffdf8 0%, #ffffff 40%, #f6fbf8 100%);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 5%;
+      background: rgba(255, 253, 248, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--green);
+      color: white;
+      font-size: 19px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      box-shadow: 0 10px 25px rgba(15, 107, 79, 0.22);
+    }
+
+    .btn:hover {
+      background: var(--dark-green);
+      transform: translateY(-1px);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--green);
+      border-color: rgba(15, 107, 79, 0.22);
+      box-shadow: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      padding: 70px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--green);
+      background: rgba(15, 107, 79, 0.08);
+      border: 1px solid rgba(15, 107, 79, 0.12);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(40px, 6vw, 72px);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .trust-row span {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 10px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(15, 107, 79, 0.12);
+      border-radius: 30px;
+      padding: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 150px 150px;
+      gap: 10px;
+    }
+
+    .photo {
+      position: relative;
+      display: grid;
+      place-items: end start;
+      min-height: 160px;
+      padding: 15px;
+      overflow: hidden;
+      border-radius: 22px;
+      color: white;
+      font-weight: 900;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+      background:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35)),
+        linear-gradient(135deg, #0f6b4f, #79c49a 48%, #e9bf66);
+    }
+
+    .photo.big {
+      grid-row: span 2;
+    }
+
+    .quick-box {
+      padding: 16px 5px 4px;
+    }
+
+    .quick-box strong {
+      font-size: 18px;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stat,
+    .card,
+    .panel,
+    .callout,
+    .faq details {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.04);
+    }
+
+    .stat {
+      padding: 22px;
+    }
+
+    .stat small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .stat strong {
+      display: block;
+      margin: 6px 0;
+      font-size: 34px;
+      letter-spacing: -0.04em;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      padding: 14px;
+    }
+
+    .property-photo {
+      min-height: 210px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .photo-a {
+      background:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.36)),
+        linear-gradient(135deg, #0f6b4f, #64b68b 48%, #e9c06b);
+    }
+
+    .photo-b {
+      background:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.36)),
+        linear-gradient(135deg, #245b8f, #8bc6d8 46%, #d89b42);
+    }
+
+    .photo-c {
+      background:
+        linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.36)),
+        linear-gradient(135deg, #3b2f65, #a278c3 48%, #f1c37a);
+    }
+
+    .tag {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--dark-green);
+      background: rgba(216, 155, 66, 0.16);
+      border: 1px solid rgba(216, 155, 66, 0.32);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .card ul {
+      padding: 0;
+      margin: 12px 0 18px;
+      list-style: none;
+    }
+
+    .card li {
+      margin: 8px 0;
+      color: var(--muted);
+      font-weight: 650;
+    }
+
+    .card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .card .btn {
+      margin-top: auto;
+      width: 100%;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      padding: 20px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      color: white;
+      font-weight: 900;
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 16px;
+      padding: 24px;
+      background: rgba(15, 107, 79, 0.06);
+      border-color: rgba(15, 107, 79, 0.16);
+    }
+
+    .callout-icon {
+      font-size: 32px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq details {
+      padding: 18px 20px;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .faq p {
+      margin-bottom: 0;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 46px;
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(15, 107, 79, 0.09), rgba(216, 155, 66, 0.12)),
+        #fffdf8;
+      border: 1px solid rgba(15, 107, 79, 0.14);
+    }
+
+    .final-cta h2 {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    footer {
+      padding: 28px 0 50px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero,
+      .cards,
+      .stats,
+      .comparison,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 46px;
+      }
+
+      .photo-grid {
+        grid-template-rows: 140px 140px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(92%, 1120px);
+      }
+
+      .nav {
+        padding: 12px 4%;
+      }
+
+      .brand span:last-child {
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 39px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 180px 120px 120px;
+      }
+
+      .photo.big {
+        grid-row: auto;
+      }
+
+      .final-cta {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="brand-icon">🌴</span>
+      <span>Karachi Farmhouse Rentals</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#farmhouses">Farmhouses</a>
+      <a href="#booking">Booking</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a
+      class="btn"
+      href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20to%20check%20farmhouse%20availability%20in%20Karachi"
+      target="_blank"
+      rel="noopener"
+    >
+      WhatsApp
+    </a>
+  </header>
+
+  <main id="top">
+    <section class="container hero">
+      <div>
+        <span class="eyebrow">Private farmhouse rentals in Karachi</span>
+
+        <h1>Book a clean private farmhouse for family picnics, birthdays, pool parties, and events.</h1>
+
+        <p>
+          Choose from 3 nice farmhouses with private pools, lawns, rooms, BBQ space,
+          and day/night slots. Message on WhatsApp to confirm date, price, and availability.
+        </p>
+
+        <div class="hero-actions">
+          <a
+            class="btn"
+            href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20to%20book%20a%20farmhouse.%20My%20date%20is%3A%20"
+            target="_blank"
+            rel="noopener"
+          >
+            Check Availability
+          </a>
+
+          <a class="btn secondary" href="#farmhouses">View Farmhouses</a>
+        </div>
+
+        <div class="trust-row">
+          <span>✓ Private pool options</span>
+          <span>✓ Family & event slots</span>
+          <span>✓ Fast WhatsApp booking</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="photo-grid">
+          <div class="photo big">
+            <span>Replace with best pool photo</span>
+          </div>
+
+          <div class="photo">
+            <span>Lawn</span>
+          </div>
+
+          <div class="photo">
+            <span>Rooms</span>
+          </div>
+        </div>
+
+        <div class="quick-box">
+          <strong>Today’s quick quote</strong>
+          <p>
+            Send date + guest count. We reply with available farmhouse, slot timing,
+            and best price.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="stats">
+        <div class="stat">
+          <small>Available properties</small>
+          <strong>3</strong>
+          <p>Farmhouses ready for day/night bookings.</p>
+        </div>
+
+        <div class="stat">
+          <small>Best use</small>
+          <strong>Family</strong>
+          <p>Picnics, birthdays, BBQ, pool gatherings.</p>
+        </div>
+
+        <div class="stat">
+          <small>Booking channel</small>
+          <strong>WhatsApp</strong>
+          <p>Fast availability check before advance payment.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="farmhouses">
+      <div class="section-head">
+        <span class="eyebrow">Choose your farmhouse</span>
+        <h2>3 private options for different budgets and guest counts</h2>
+        <p>Edit the names, prices, photos, locations, and capacity before running ads.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="photo property-photo photo-a">
+            <span>Farmhouse A photo</span>
+          </div>
+
+          <span class="tag">Best weekday rate</span>
+
+          <h3>Farmhouse A — Family Pool House</h3>
+
+          <p>
+            Clean private farmhouse for family picnic, birthday, BBQ night, or pool gathering.
+          </p>
+
+          <ul>
+            <li>Private pool + lawn</li>
+            <li>Rooms, bathrooms, seating area</li>
+            <li>Day and night slots available</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20Farmhouse%20A.%20Date%3A%20%20Guests%3A%20"
+            target="_blank"
+            rel="noopener"
+          >
+            Ask for Farmhouse A
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="photo property-photo photo-b">
+            <span>Farmhouse B photo</span>
+          </div>
+
+          <span class="tag">Popular for parties</span>
+
+          <h3>Farmhouse B — Event Lawn</h3>
+
+          <p>
+            Better for birthday setups, group gatherings, and families who want more open space.
+          </p>
+
+          <ul>
+            <li>Large lawn + pool area</li>
+            <li>Good for decor and photography</li>
+            <li>Weekend slots on request</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20Farmhouse%20B.%20Date%3A%20%20Guests%3A%20"
+            target="_blank"
+            rel="noopener"
+          >
+            Ask for Farmhouse B
+          </a>
+        </article>
+
+        <article class="card">
+          <div class="photo property-photo photo-c">
+            <span>Farmhouse C photo</span>
+          </div>
+
+          <span class="tag">Premium option</span>
+
+          <h3>Farmhouse C — Premium Private Stay</h3>
+
+          <p>
+            For customers who want a nicer private experience with more comfort and privacy.
+          </p>
+
+          <ul>
+            <li>Premium rooms + private setting</li>
+            <li>Pool, BBQ, family seating</li>
+            <li>Best for special occasions</li>
+          </ul>
+
+          <a
+            class="btn"
+            href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20Farmhouse%20C.%20Date%3A%20%20Guests%3A%20"
+            target="_blank"
+            rel="noopener"
+          >
+            Ask for Farmhouse C
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="comparison">
+        <div class="panel">
+          <h3>Day slot</h3>
+          <p>
+            Best for family picnic, kids pool time, BBQ lunch, birthdays, and casual gatherings.
+          </p>
+          <ul>
+            <li>Morning to evening timing</li>
+            <li>Great for families and kids</li>
+            <li>Usually best value on weekdays</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Night slot</h3>
+          <p>
+            Best for BBQ nights, birthday decor, private parties, and friends/family events.
+          </p>
+          <ul>
+            <li>Evening to late-night timing</li>
+            <li>Lighting and decor friendly</li>
+            <li>Advance booking recommended</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="booking">
+      <div class="section-head">
+        <span class="eyebrow">Simple booking process</span>
+        <h2>How to reserve your date</h2>
+      </div>
+
+      <div class="flow">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Send date</h3>
+          <p>Message your event date, day/night slot, and guest count.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Get options</h3>
+          <p>We confirm available farmhouses, timing, rules, and best price.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Pay advance</h3>
+          <p>Reserve with advance payment after confirming details.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Enjoy</h3>
+          <p>Arrive on your booked slot and enjoy the private farmhouse.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="callout">
+        <div class="callout-icon">💬</div>
+
+        <div>
+          <h3>Fastest way to book</h3>
+
+          <p>
+            WhatsApp us your date, slot, guest count, and event type.
+            We will reply with available farmhouse options and current price.
+          </p>
+
+          <a
+            class="btn"
+            href="https://wa.me/923001234567?text=Hi%2C%20I%20want%20to%20check%20farmhouse%20availability.%0ADate%3A%0ADay%20or%20night%3A%0AGuests%3A%0AEvent%20type%3A"
+            target="_blank"
+            rel="noopener"
+          >
+            Send WhatsApp Inquiry
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="faq">
+      <div class="section-head">
+        <span class="eyebrow">Questions before booking</span>
+        <h2>FAQ</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Is the pool private?</summary>
+          <p>
+            Yes, these listings are for private farmhouse bookings.
+            Confirm pool rules and timing on WhatsApp before payment.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can families book?</summary>
+          <p>
+            Yes. Family picnics, birthdays, BBQ gatherings, and private events
+            are the main use cases.
+          </p>
+        </details>
+
+        <details>
+          <summary>What are the prices?</summary>
+          <p>
+            Prices depend on farmhouse, date, day/night slot, guest count,
+            and weekend demand. Message on WhatsApp for today’s best available price.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can we bring food?</summary>
+          <p>
+            Most bookings allow outside food and BBQ, but final rules depend on the farmhouse.
+            Confirm before booking.
+          </p>
+        </details>
+
+        <details>
+          <summary>How do I confirm booking?</summary>
+          <p>
+            After you choose a farmhouse and date, advance payment confirms the booking.
+            You receive confirmation details on WhatsApp.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="final-cta">
+        <span class="eyebrow">Ready to check availability?</span>
+
+        <h2>
+          Send one WhatsApp message and get the best farmhouse option for your date.
+        </h2>
+
+        <a
+          class="btn"
+          href="https://wa.me/923001234567?text=Hi%2C%20I%20need%20a%20farmhouse%20in%20Karachi.%0ADate%3A%0ADay%20or%20night%3A%0AGuests%3A%0ABudget%3A"
+          target="_blank"
+          rel="noopener"
+        >
+          Check My Date
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    Karachi Farmhouse Rentals · Private farmhouse booking by WhatsApp · Replace phone number, photos, prices, and exact locations before ads.
+  </footer>
+</body>
+</html>
